@@ -26,7 +26,7 @@ const header = (
 
 // JSX element, main
 const tech = ['JavaScript', 'HTML', 'CSS']
-const techFormatted = tech.map((tech)=> <li>{tech}</li>)
+const techFormatted = tech.map((tech)=> <li key={tech}>{tech}</li>)
 const main = (
   <main>
     <div className='main-wrapper'>
