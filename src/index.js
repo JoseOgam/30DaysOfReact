@@ -11,9 +11,11 @@ const yearBorn = 1994
 const currentYear = new Date().getFullYear()
 const age = currentYear - yearBorn
 
-const header = (
-  <header>
-    <div className='header-wrapper'>
+const Header = () => {
+  return (
+    <div>
+      <header>
+       <div className="Header-wrapper">
       <h1>{welcome}</h1>
     <h2>{title}</h2>
     <h3>{subtitle}</h3>
@@ -21,14 +23,18 @@ const header = (
       <h6>Age: { age } years</h6>
       <small>Date : {date}</small>
     </div>
-  </header>
-)
+  </header> 
+   </div >
+  )
+}
 
 // JSX element, main
 const tech = ['JavaScript', 'HTML', 'CSS']
 const techFormatted = tech.map((tech)=> <li key={tech}>{tech}</li>)
-const main = (
-  <main>
+const Main = () => {
+  return (
+    <div>
+      <main>
     <div className='main-wrapper'>
       <p>prerequisite to get started with react.js</p>
     <ul>
@@ -36,27 +42,34 @@ const main = (
     </ul>
     </div>
   </main>
-)
+    </div>
+  )
+}
 
 // JSX element, footer
 
-const footer = (
-  <footer>
+const Footer = () => {
+  return (
+    <div>
+      <footer>
     <div className='footer-wrapper'>
         <p>Copyright 2020</p>
   </div>
   </footer>
-)
-
-const app = (
-  <div>
-     { header }
-     { main }
-     {footer}
- </div>
-  
+    </div>
   )
+}
+
+const App = () => {
+  return (
+    <div>
+     <  Header />
+     <Main />
+     <Footer/>
+ </div>
+  )
+}
 
 const rootElement = document.getElementById('root')
 
-ReactDOM.render(app, rootElement)
+ReactDOM.render(<App/>, rootElement)
